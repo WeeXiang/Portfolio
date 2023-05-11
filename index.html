@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width", initial-scale="1.0">
+        <title>Personal Portfolio</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/15d41fe62b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+        <img src="logo.png" class="logo">
+        <ul>
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-text">
+            <p>Data Analyst</p>
+            <h1>Hi, I'm <span>Tiew Wee Xiang</span><br> from Singapore</h1>
+        </div>
+    </div>
+ </div>
+ <!-- ----------about---------- -->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                 <img src="Image.jpeg">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p>I am currently a year 3 student in Ngee Ann Polytechnic, pursing a diploma of Data Science. For me personally, I aspire to be a data analyst
+                     in the future as I enjoy creating dashboards and figure out interesting insights or trends. Furthermore, I am an indivdiual with strong analytical
+                      thinking skill and enjoys working with charts. Hence, I aim to be a data analyst in the future to provide value for my organization.</p>
+                   <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('experience')">Experience </p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                   </div> 
+                   <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>Data Analyst</span><br>Cleaning of datasets through python<br>Creating visualizations & dashboard<br>Creating prediction models<br></li>
+                    </ul>
+                   </div>
+                   <div class="tab-contents" id="experience">
+                    <ul>
+                        <li><span>2023 - Current</span><br>Internship<br></li>
+                    </ul>
+                   </div>
+                   <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>2019 - Current</span><br>Ngee Ann Polytechnic<br></li>
+                        <li><span>2016 - 2019</span><br>Fuhua Secondary School<br></li>
+                    </ul>
+                   </div>        
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ----------Services---------- -->
+<div id="services">
+    <div class="container">
+        <h1 class="sub-title">My Services</h1>
+        <div class="services-list">
+            <div>
+                <i class="fa-solid fa-chart-simple"></i>
+                <h2>Data Analyst</h2>
+                <p>As a Data Analyst, I have the knowledge of creating visualizations and dashboards to find interesting trends. I am able
+                    to work comfortably with visualizations tool such as Power BI and Tableau. This is because some of the projects I have 
+                    worked on requires the visualizations tool stated above.
+                </p>
+            </div>
+            <div>
+                <i class="fa-brands fa-python"></i>
+                <h2>Data Scientist</h2>
+                <p>As a Data Scientist, I have acquire the knowledge of cleaning data using programming. One of the most commonly used language
+                    I have done for my projects are Python, where I use the platform of Jupyter Notebook to clean datasets. I will then proceed 
+                    to create predicion models or visualizations.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ----------Portfolio---------- -->
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">Skill</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="Creating dashboard.png">
+                <div class="layer">
+                    <h3>Dashboard creation</h3>
+                    <p>Creating of dashboard where different visualizations was used to gain insights and find interesting trends.</p>
+                </div>
+            </div>
+            <div class="work">
+                <img src="Machine learning.jpg">
+                <div class="layer">
+                    <h3>Machine Learning</h3>
+                    <p>Creating of machine learning models for prediction using different algorithms.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ----------Contact--------- -->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-sharp fa-solid fa-paper-plane"></i> tiewweexiang123@hotmail.com</p>
+                <p><i class="fa-sharp fa-solid fa-phone"></i> +65 96459196</p>
+                <a href="Tiew Wee Xiang_Resume.pdf" download class="btn btn2">Download Resume</a>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+</script>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbz_bsaD9vF6TUQCL3R7eLT_fnEKV023fYkQ0bnqmR_JR42PUGXYlM5zRrmeqH03dzTNAg/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg= document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+</body>
+</html>
